@@ -15,11 +15,12 @@ public class Combustivel {
 		gasolina = teclado.nextDouble();
 		System.out.print("Digite o valor do Alcool: ");
 		alcool = teclado.nextDouble();
-		teclado.close();
 		// processamento
 		if (alcool < 0.7 * gasolina) {
-			System.out.print("No momento Ã© mais vantajoso abastecer com Ãlcool!");
-		} else
-			System.out.print("No momento Ã© mais vantajoso abastercer com Gasolina!");
+			System.out.print("No momento é mais vantajoso abastecer com Álcool!");
+		} else 
+			System.out.print("No momento é mais vantajoso abastercer com Gasolina!");
+		teclado.close();
 	}
+	
 }
