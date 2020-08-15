@@ -1,6 +1,5 @@
 package Exercicios;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Combustivel {
@@ -19,8 +18,8 @@ public class Combustivel {
 		teclado.close();
 		// processamento
 		if (alcool < 0.7 * gasolina) {
-			System.out.print("No momento é mais vantajoso abastecer com Álcool!");
+			System.out.print("No momento Ã© mais vantajoso abastecer com Ãlcool!");
 		} else
-			System.out.print("No momento é mais vantajoso abastercer com Gasolina!");
+			System.out.print("No momento Ã© mais vantajoso abastercer com Gasolina!");
 	}
 }
