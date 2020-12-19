@@ -1,0 +1,1 @@
+lblStatus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/imc1.png")));

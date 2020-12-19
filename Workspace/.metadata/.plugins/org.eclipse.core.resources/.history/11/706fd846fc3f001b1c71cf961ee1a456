@@ -1,0 +1,107 @@
+package IMC;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+public class IMC extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField textPeso;
+	private JTextField textAltura;
+	private JTextField textIMC;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					IMC frame = new IMC();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public IMC() {
+		setTitle("CalculadoraIMC");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 265, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnCalcularIMC = new JButton("Calcular IMC");
+		btnCalcularIMC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+			}
+		});
+		btnCalcularIMC.setBounds(10, 144, 110, 23);
+		contentPane.add(btnCalcularIMC);
+		
+		JButton btnLimpar = new JButton("Limpar");
+		btnLimpar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				txtPeso.setText(null);
+				txtAltura.setText(null);
+				txtIMC.setText(null);
+			}
+		});
+		btnLimpar.setBounds(129, 144, 110, 23);
+		contentPane.add(btnLimpar);
+		
+		JButton btnSobre = new JButton("Sobre");
+		btnSobre.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JOptionPane.showMessageDialog(null, "Calculadora de IMC v1.0\nAutor Thiago Sobral", "Sobre", JOptionPane.DEFAULT_OPTION);
+			}
+		});
+		btnSobre.setBounds(76, 178, 100, 23);
+		contentPane.add(btnSobre);
+		
+		textPeso = new JTextField();
+		textPeso.setBounds(99, 21, 96, 20);
+		contentPane.add(textPeso);
+		textPeso.setColumns(10);
+		
+		textAltura = new JTextField();
+		textAltura.setBounds(99, 52, 96, 20);
+		contentPane.add(textAltura);
+		textAltura.setColumns(10);
+		
+		textIMC = new JTextField();
+		textIMC.setBounds(99, 83, 96, 20);
+		contentPane.add(textIMC);
+		textIMC.setColumns(10);
+		
+		JLabel lblPeso = new JLabel("Peso:");
+		lblPeso.setBounds(22, 24, 48, 14);
+		contentPane.add(lblPeso);
+		
+		JLabel lblAltura = new JLabel("Altura:");
+		lblAltura.setBounds(22, 55, 48, 14);
+		contentPane.add(lblAltura);
+		
+		JLabel lblIMC = new JLabel("IMC:");
+		lblIMC.setBounds(22, 86, 48, 14);
+		contentPane.add(lblIMC);
+	}
+
+}

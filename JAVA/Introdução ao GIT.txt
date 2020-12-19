@@ -1,0 +1,18 @@
+Instalar o GIT
+https://git-scm.com/
+
+Configurações iniciais:
+git config --global user.name "Seu nome"
+git config --global user.email "Seu email do GitHub"
+
+Clonando um repositório:
+git clone url_do_repositório
+
+Gerenciando as versões/modificações
+Na pasta clonada -> botão direito do mouse -> git bash here
+git status -> verifica o status das alterações
+git add . -> adiciona todas as alterações ao repositório local
+git status
+git commit -m "descrição das alterações"
+git push -> Envia as alterações para o GitHub 
+

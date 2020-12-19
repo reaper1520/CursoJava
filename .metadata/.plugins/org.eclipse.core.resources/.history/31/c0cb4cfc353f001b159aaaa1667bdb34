@@ -1,0 +1,96 @@
+package media;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Toolkit;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class Media extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtNota1;
+	private JTextField txtNota2;
+	private JTextField txtMedia;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Media frame = new Media();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Media() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Media.class.getResource("/icones/icone darth.png")));
+		setTitle("Calculadora da Media");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 350, 246);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Nota 1:");
+		lblNewLabel.setBounds(10, 11, 48, 14);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Nota 2:");
+		lblNewLabel_1.setBounds(10, 43, 48, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		txtNota1 = new JTextField();
+		txtNota1.setBounds(52, 8, 96, 20);
+		contentPane.add(txtNota1);
+		txtNota1.setColumns(10);
+		
+		txtNota2 = new JTextField();
+		txtNota2.setBounds(52, 40, 96, 20);
+		contentPane.add(txtNota2);
+		txtNota2.setColumns(10);
+		
+		JButton btnCalcular = new JButton("Calcular");
+		btnCalcular.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//variaveis
+				double nota1, nota2, media;
+				//entrada
+				nota1 = Double.parseDouble(txtNota1.getText());
+				nota2 = Double.parseDouble(txtNota2.getText());
+				//processamento
+				media = (nota1 + nota2) / 2;
+				//sadia
+				txtMedia.setText("" + media);
+			}
+		});
+		btnCalcular.setBounds(10, 81, 89, 23);
+		contentPane.add(btnCalcular);
+		
+		JLabel lblNewLabel_2 = new JLabel("Media:");
+		lblNewLabel_2.setBounds(10, 125, 48, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		txtMedia = new JTextField();
+		txtMedia.setBounds(52, 122, 96, 20);
+		contentPane.add(txtMedia);
+		txtMedia.setColumns(10);
+	}
+}

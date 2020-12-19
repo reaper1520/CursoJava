@@ -1,0 +1,51 @@
+Instalação do window buider (plugin Eclipse para trabalhar a interface gráfica)
+
+1) help -> eclipse marketplace ("loja do eclipse")
+2) Aba popular -> escolher window buider
+3) Reiniciar o eclipse
+4) Criar um novo projeto
+5) Criar um pacote
+6) No pacote criar um JFrame (opção other -> window builder -> swing)
+
+_______________________________________________________________
+Calculadora de média:
+
+         nota1 + nota2
+média = _______________
+               2
+
+variáveis: nota1, nota2, media (numéricas não inteiras) double
+
+entrada: nota1 e nota2
+
+processamento: media = (nota1 + nota2) / 2
+
+saída: media
+
+if (media < 5) {
+  //reprovado
+} else {
+  //aprovado
+}
+
+JOptionPane //caixa de diálogo
+
+messagedialog // caixa simples
+null (tamanho padrão), "TEXTO", "Título", Ícone
+
+
+
+
+_______________________________________________________
+<ctrl><shift><o> -> importação automática
+<ctrl><shift><f> -> identação do código
+<alt><shift><y> -> quebra automática de linha
+ifel <ctrl><espaço> -> montar a estrutura if else
+
+
+
+
+
+
+
+

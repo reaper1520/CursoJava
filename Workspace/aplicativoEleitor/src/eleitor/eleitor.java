@@ -1,0 +1,102 @@
+package eleitor;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import java.awt.SystemColor;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class eleitor extends JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField txtIdade;
+	private JLabel lblResultado;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					eleitor frame = new eleitor();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public eleitor() {
+		setTitle("Aplicativo do Eleitor");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.controlShadow);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblIdade = new JLabel("Idade:");
+		lblIdade.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblIdade.setBounds(52, 11, 48, 14);
+		contentPane.add(lblIdade);
+		
+		txtIdade = new JTextField();
+		txtIdade.setBounds(98, 10, 96, 20);
+		contentPane.add(txtIdade);
+		txtIdade.setColumns(10);
+		
+		JButton btnVerificar = new JButton("Verificar");
+		btnVerificar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//invocando o método verificar
+				verificar();
+			}
+		});
+		btnVerificar.setBounds(52, 60, 89, 23);
+		contentPane.add(btnVerificar);
+		
+		lblResultado = new JLabel("");
+		lblResultado.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblResultado.setBounds(98, 149, 239, 20);
+		contentPane.add(lblResultado);
+	
+	} //final do construtor
+
+	
+	//metodo para verificar a obrigatoriedade do voto
+	void verificar () {
+		//variavel
+		int idade;
+		//entrada
+		idade = Integer.parseInt(txtIdade.getText());
+		//processamento + saída
+		//System.out.println(idade);
+		if (idade < 16) {
+			lblResultado.setText("Proíbido de Votar");
+		} else if (idade >= 18 && idade<=70) {
+			lblResultado.setText("Votação Obrigatória");
+		} else if (idade >= 16 && idade <18 || idade > 70) { // pode ser usado somente o comando "else", sem necessidade de digitar a condição
+			lblResultado.setText("Voto Facultativo");
+		}
+	}
+	
+}
